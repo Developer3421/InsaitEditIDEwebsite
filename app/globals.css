@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0d0d1a;
+  --foreground: #f0e8ff;
+  --purple-deep: #1a0a2e;
+  --purple-mid: #6b21a8;
+  --purple-light: #a855f7;
+  --orange-main: #f97316;
+  --orange-light: #fb923c;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(168, 85, 247, 0.4); }
+  50% { box-shadow: 0 0 40px rgba(249, 115, 22, 0.6), 0 0 80px rgba(168, 85, 247, 0.4); }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #a855f7, #f97316);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-bg-animated {
+  background: linear-gradient(270deg, #6b21a8, #f97316, #a855f7, #fb923c);
+  background-size: 400% 400%;
+  animation: gradient-shift 8s ease infinite;
+}
+
+.card-purple {
+  background: linear-gradient(135deg, rgba(107, 33, 168, 0.15), rgba(168, 85, 247, 0.08));
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.card-purple:hover {
+  border-color: rgba(249, 115, 22, 0.5);
+  background: linear-gradient(135deg, rgba(107, 33, 168, 0.25), rgba(249, 115, 22, 0.1));
+  box-shadow: 0 0 30px rgba(168, 85, 247, 0.2), 0 0 60px rgba(249, 115, 22, 0.1);
+  transform: translateY(-4px);
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #a855f7, #f97316);
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #f97316, #a855f7);
+  box-shadow: 0 0 30px rgba(249, 115, 22, 0.5);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  border: 2px solid rgba(168, 85, 247, 0.6);
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  border-color: #f97316;
+  background: rgba(249, 115, 22, 0.1);
+  box-shadow: 0 0 20px rgba(249, 115, 22, 0.3);
+  transform: translateY(-2px);
+}
+
+.code-window {
+  background: #0f0f1e;
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  font-family: 'Courier New', monospace;
+}
+
+.nav-blur {
+  backdrop-filter: blur(20px);
+  background: rgba(13, 13, 26, 0.85);
+  border-bottom: 1px solid rgba(168, 85, 247, 0.2);
+}
